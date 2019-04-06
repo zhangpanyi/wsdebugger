@@ -1,2 +1,2 @@
-# wsdebug
-(Chrome插件)websocket调试工具
+# wsdebugger
+(Chrome插件)WebSocket调试工具
