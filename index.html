@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>websocket测试工具</title>
+  <title>websocket调试工具</title>
 
   <!-- 样式表 -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min-4.0.0.css">
@@ -13,11 +13,113 @@
 </head>
 
 <body>
-  <div id="app" class="container"></div>
+  <div id="app" class="container">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="navbar-brand monospace">
+        <img src="icon.svg" width="30" height="30" class="d-inline-block align-top">
+        <small>WebSocket 调试工具</small>
+      </div>
+    </nav><!-- 导航栏 -->
+
+    <!-- 主体内容 -->
+    <div class="row monospace">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <!-- 服务设置 -->
+              <div class="col-sm-12">
+                <h5 class="card-title">状态: 已连接</h5>
+                <hr class="divider divider-dashed">
+                <!-- 连接地址 -->
+                <div class="card-text">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">服务地址</div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="输入服务器地址">
+                    <div>
+                      <button type="button" class="btn btn-success">连接</button>
+                      <button type="button" class="btn btn-secondary">断开</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- 服务设置 -->
+
+              <!-- 发送设置 -->
+              <div class="col-sm-12 mt-3">
+                <h5 class="card-title">自动发送</h5>
+                <hr class="divider divider-dashed">
+                <!-- 自动发送 -->
+                <div class="card-text">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">每隔</div>
+                    </div>
+                    <input title="" type="text" class="form-control text-center">
+                    <div class="input-group-append input-group-prepend">
+                      <span class="input-group-text">秒发送内容</span>
+                    </div>
+                    <input title="" type="text" class="form-control">
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-block">开始发送</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- 手动发送 -->
+                <div class="card-text mt-2">
+                  <textarea class="form-control mt-1" rows="2" placeholder="需要发送到服务端的内容"></textarea>
+                  <div>
+                    <input type="checkbox">
+                    <label>自动清空输入</label>
+                  </div>
+                </div>
+                <div class="card-text mt-2">
+                  <button class="btn btn-block btn-success">发送消息</button>
+                </div>
+              </div><!-- 发送设置 -->
+
+              <!-- 消息设置 -->
+              <div class="col-sm-12 mt-3">
+                <h5 class="card-title" style="display: inline">消息设置</h5>
+                <small>
+                  <a href="javascript:void(0);">清空消息</a>
+                </small>
+                <hr class="divider divider-dashed">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" id="recvClean" class="custom-control-input">
+                  <label class="custom-control-label" for="recvClean">自动清空记录</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" id="recvDecode" class="custom-control-input">
+                  <label class="custom-control-label" for="recvDecode">消息JSON解码</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" id="recvPause" class="custom-control-input">
+                  <label class="custom-control-label" for="recvPause">暂停接收消息</label>
+                </div>
+                <hr class="divider divider-dashed">
+              </div><!-- 消息设置 -->
+
+              <!-- 调试消息 -->
+              <div class="col-sm-12 mt-3">
+                <h5 class="card-title">调试消息</h5>
+                <hr class="divider divider-dashed">
+                <div class="card-text">
+                  <div class="card-title console-box" id="console-box">
+                  </div>
+                </div>
+              </div> <!-- 调试消息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- 主体内容 -->
+  </div>
   <script src="scripts/vue-2.2.6.js"></script>
   <script src="scripts/moment.min-2.18.1.js"></script>
   <script src="scripts/highlight.min-9.10.0.js"></script>
   <script src="scripts/json.min-9.10.0.js"></script>
-  <script type="module" src="debugger.js"></script>
 </body>
 </html>
