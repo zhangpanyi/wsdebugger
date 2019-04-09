@@ -1,0 +1,5 @@
+.message-box {max-height: calc(100vh - 220px)}
+
+.console-box, .message-box {display: block;overflow: auto;padding: 1rem}
+
+.console-box {max-height: calc(100vh - 520px)}
