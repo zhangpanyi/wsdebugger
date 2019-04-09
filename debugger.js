@@ -200,7 +200,7 @@ var app = {
         1013: '1013 TRY_AGAIN_LATER',
         1014: '1014 CLOSE_RETAIN',
         1015: '1015 TLS_HANDSHAKE'
-      }
+      };
       var error = codes[code];
       if (error === undefined) {
         error = '0000 UNKNOWN_ERROR 未知错误';
