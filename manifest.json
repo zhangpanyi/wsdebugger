@@ -1,6 +1,6 @@
 {
     "name": "WebSocket Debuger",
-    "version": "1.0",
+    "version": "1.10",
     "description": "WebSocket 调试工具",
     "manifest_version": 2,
     "permissions":[ "tabs", "storage", "background" ],
