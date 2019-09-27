@@ -174,7 +174,10 @@ var app = {
     } else {
       this.writeConsole('danger', '当前浏览器不支持 H5 WebSocket 请更换浏览器');
     }
-    chrome.storage.local.get(['address'], function(result) {
+    chrome.storage.local.get(['address', 'history'], function(result) {
+      if (result.history instanceof Array) {
+        self.history = result.history;
+      }
       if (typeof result.address === 'string') {
         self.address = result.address;
       }
@@ -266,6 +269,7 @@ var app = {
           if (this.history.length > 10) {
             this.history.splice(10, this.history.length - 10);
           }
+          chrome.storage.local.set({history: this.history});
         }
       }
       try {
